@@ -1,0 +1,41 @@
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+#  URL raw del dataset (ya corregida)
+url = "https://raw.githubusercontent.com/Albertooo18/parcial2_ia/main/dataset/trafico_red.csv"
+
+try:
+    # Cargar el dataset
+    df = pd.read_csv(url)
+    print("Dataset cargado correctamente.\n")
+    print(df.head())
+
+    # Seleccionar solo columnas numéricas
+    df_numeric = df.select_dtypes(include=['number'])
+
+    # Estadísticas básicas
+    print("\n Estadísticas básicas:")
+    estadisticas = pd.DataFrame({
+        "Media": df_numeric.mean(),
+        "Mediana": df_numeric.median(),
+        "Moda": df_numeric.mode().iloc[0],
+        "Desviación estándar": df_numeric.std()
+    })
+    print(estadisticas)
+
+    # Matriz de correlación
+    print("\n Matriz de correlación entre variables numéricas:")
+    correlacion = df_numeric.corr()
+    print(correlacion)
+
+    # Visualizar matriz de correlación
+    plt.figure(figsize=(10, 6))
+    sns.heatmap(correlacion, annot=True, cmap='coolwarm', fmt=".2f")
+    plt.title("Matriz de correlación entre variables numéricas")
+    plt.tight_layout()
+    plt.show()
+
+except Exception as e:
+    print("Error al cargar el dataset:", e)
