@@ -14,3 +14,7 @@ Aplicar conocimientos sobre creación y análisis de datasets con Python, a part
 - Python 3
 - Pandas, SciPy, Seaborn, Matplotlib
 - Google Colab
+  
+Grupo: _1S3132__
+Estudiante: Cristian Mendoza Cédula Fila:  16
+Estudiante: Amilcar Ortiz Cédula Fila: 19    
