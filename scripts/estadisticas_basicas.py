@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-#  URL raw del dataset (ya corregida)
+#  URL raw del dataset
 url = "https://raw.githubusercontent.com/Albertooo18/parcial2_ia/main/dataset/trafico_red.csv"
 
 try:
